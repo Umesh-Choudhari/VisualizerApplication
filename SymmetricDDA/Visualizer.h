@@ -8,7 +8,6 @@ class OpenGLWindow;
 class Visualizer : public QMainWindow
 {
     Q_OBJECT
-
 public:
     Visualizer(QWindow* parent = nullptr);
     ~Visualizer();
@@ -22,5 +21,4 @@ private:
     QWidget*        mCentralWidget;
     QStatusBar*     mStatusBar;
     OpenGLWindow*   mRenderer;
-
 };
