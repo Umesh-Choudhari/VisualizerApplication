@@ -90,8 +90,7 @@ void OpenGLWindow::paintGL()
     glEnableVertexAttribArray(m_colAttr);
 
     glDrawArrays(GL_LINES, 0, vertices.size() / 2);
-    //glDrawArrays(GL_LINES, 0, verticesOfLines.size() / 2);
-
+    
     glDisableVertexAttribArray(m_colAttr);
     glDisableVertexAttribArray(m_posAttr);
 }
