@@ -20,7 +20,7 @@ QVector<QVector2D>& SymmetricDDA::getPixelVertices()
 //Code to draw a grid
 void SymmetricDDA::drawGrid(QVector<GLfloat>& vertices, QVector<GLfloat>& colors)
 {
-    const float gridSize = 8.0f;
+    const float gridSize = 50.0f;
     const float step = 1.0f;
 
     // Code to draw horizontal lines
