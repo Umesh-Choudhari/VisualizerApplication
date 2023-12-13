@@ -71,7 +71,7 @@ void OpenGLWindow::paintGL()
     mProgram->bind();
 
     QMatrix4x4 matrix;
-    matrix.ortho(-6.0f, 6.0f, -6.0f, 6.0f, 0.1f, 100.0f);
+    matrix.ortho(-30.0f, 30.0f, -30.0f, 30.0f, 0.1f, 100.0f);
     matrix.translate(0, 0, -2);
 
     mProgram->setUniformValue(m_matrixUniform, matrix);
