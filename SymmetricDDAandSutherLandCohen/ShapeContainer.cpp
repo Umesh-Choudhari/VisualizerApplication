@@ -1,7 +1,6 @@
 #include "stdafx.h"
 #include "ShapeContainer.h"
 
-using namespace symmetricDDAandSutherlandCohen;
 
 ShapeContainer::ShapeContainer()
 {

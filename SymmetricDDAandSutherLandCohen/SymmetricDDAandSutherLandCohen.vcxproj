@@ -66,11 +66,11 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>E:\Ramesh__Workspace\Qt\SymmetricDDAandSutherLandCohen\Geometry;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>E:\Ramesh__Workspace\Qt\SymmetricDDAandSutherLandCohen2\SymmetricDDAandSutherLandCohen1\SymmetricDDAandSutherLandCohen\Algorithm;E:\Ramesh__Workspace\Qt\SymmetricDDAandSutherLandCohen2\SymmetricDDAandSutherLandCohen1\SymmetricDDAandSutherLandCohen\Geometry;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <AdditionalLibraryDirectories>E:\Ramesh__Workspace\Qt\SymmetricDDAandSutherLandCohen\x64\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>Geometry.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>E:\Ramesh__Workspace\Qt\SymmetricDDAandSutherLandCohen2\SymmetricDDAandSutherLandCohen1\SymmetricDDAandSutherLandCohen\x64\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>Geometry.lib;Algorithm.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
@@ -109,23 +109,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <QtMoc Include="OpenGLWindow.h" />
-    <ClInclude Include="SutherlandandCohenAlgorithm.h" />
-    <ClInclude Include="SymmetricDDA.h" />
     <QtRcc Include="SymmetricDDAandSutherLandCohen.qrc" />
     <QtUic Include="SymmetricDDAandSutherLandCohen.ui" />
     <QtMoc Include="SymmetricDDAandSutherLandCohen.h" />
-    <ClCompile Include="Line.cpp" />
     <ClCompile Include="OpenGLWindow.cpp" />
-    <ClCompile Include="Point3D.cpp" />
-    <ClCompile Include="Rectangle.cpp" />
     <ClCompile Include="ShapeContainer.cpp" />
-    <ClCompile Include="SutherlandandCohenAlgorithm.cpp" />
-    <ClCompile Include="SymmetricDDA.cpp" />
     <ClCompile Include="SymmetricDDAandSutherLandCohen.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClInclude Include="Line.h" />
-    <ClInclude Include="Point3D.h" />
-    <ClInclude Include="Rectangle.h" />
     <ClInclude Include="ShapeContainer.h" />
     <ClInclude Include="stdafx.h" />
     <ClCompile Include="stdafx.cpp">

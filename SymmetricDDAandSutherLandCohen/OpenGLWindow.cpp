@@ -8,7 +8,6 @@
 #include <QOpenGLShaderProgram>
 #include <QPainter>
 
-using namespace symmetricDDAandSutherlandCohen;
 
 OpenGLWindow::OpenGLWindow(const QColor& background, QMainWindow* parent) :
     mBackground(background)
@@ -48,22 +47,6 @@ void OpenGLWindow::setColorOfLines(QVector<GLfloat>& colorOfLines)
     colorOfOrignalLine = colorOfLines;
 }
 
-// Code to fill the pixel with color
-void OpenGLWindow::fillSquare(const QVector<QVector2D>& squareVertices, const QVector3D& fillColor)
-{
-    QVector<GLfloat> vertices;
-    QVector<GLfloat> colors;
-
-    for (const auto& vertex : squareVertices)
-    {
-        vertices << vertex.x();
-        vertices << vertex.y();
-        colors << fillColor.x() << fillColor.y() << fillColor.z();
-    }
-
-}
-
-
 void OpenGLWindow::paintGL()
 {
     glClear(GL_COLOR_BUFFER_BIT);
@@ -79,19 +62,35 @@ void OpenGLWindow::paintGL()
     GLfloat* verticesData = verticesOfOrignalLine.data();
     GLfloat* colorsData = colorOfOrignalLine.data();
 
-    glVertexAttribPointer(m_posAttr, 2, GL_FLOAT, GL_FALSE, 0, verticesData);
-    glVertexAttribPointer(m_colAttr, 3, GL_FLOAT, GL_FALSE, 0, colorsData);
+    if (mFlag == 1)
+    {
+        glVertexAttribPointer(m_posAttr, 3, GL_FLOAT, GL_FALSE, 0, verticesData);
+        glVertexAttribPointer(m_colAttr, 3, GL_FLOAT, GL_FALSE, 0, colorsData);
 
-    glEnableVertexAttribArray(m_posAttr);
-    glEnableVertexAttribArray(m_colAttr);
+        glEnableVertexAttribArray(m_posAttr);
+        glEnableVertexAttribArray(m_colAttr);
 
-    glDrawArrays(GL_LINES, 0, verticesOfOrignalLine.size() / 2);
+        glDrawArrays(GL_LINES, 0, verticesOfOrignalLine.size() / 3);
+    }
+    else
+    {
+        glVertexAttribPointer(m_posAttr, 2, GL_FLOAT, GL_FALSE, 0, verticesData);
+        glVertexAttribPointer(m_colAttr, 3, GL_FLOAT, GL_FALSE, 0, colorsData);
+
+        glEnableVertexAttribArray(m_posAttr);
+        glEnableVertexAttribArray(m_colAttr);
+
+        glDrawArrays(GL_LINES, 0, verticesOfOrignalLine.size() / 2);
+    }
+
+    
 }
 
-void OpenGLWindow::updateData(const QVector<GLfloat>& vertices, const QVector<GLfloat>& colors)
+void OpenGLWindow::updateData(const QVector<GLfloat>& vertices, const QVector<GLfloat>& colors,int  flag)
 {
     verticesOfOrignalLine = vertices;
     colorOfOrignalLine = colors;
+    mFlag = flag;
     update();  // Schedule a repaint
 }
 

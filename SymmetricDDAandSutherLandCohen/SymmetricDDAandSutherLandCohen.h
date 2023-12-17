@@ -1,16 +1,22 @@
 #pragma once
-#include "SymmetricDDAandSutherLandCohen.h"
+#include "Bezier.h"
+#include "Hermite.h"
+#include "Rectanglee.h"
 #include "SymmetricDDA.h"
+#include "SutherlandandCohenAlgorithm.h"
+#include "SymmetricDDAandSutherLandCohen.h"
 #include "ui_SymmetricDDAandSutherLandCohen.h"
 
+#include <vector>
 #include <QtWidgets/QMainWindow>
+
+using namespace std;
 
 class OpenGLWindow;
 
-namespace symmetricDDAandSutherlandCohen
+
+class SymmetricDDAandSutherLandCohen : public QMainWindow
 {
-    class SymmetricDDAandSutherLandCohen : public QMainWindow
-    {
         Q_OBJECT
 
     public:
@@ -20,8 +26,15 @@ namespace symmetricDDAandSutherlandCohen
     private:
         void setupUi();
 
+    public slots:
+        void clipLine();
+        void drawLine();
+        void drawCurveUsingHermite();
+        void drawCurveUsingBezier();
+
     public:
-        QVector<QVector2D> mPixelVertices;
+        vector<float>      mVerticess;
+        vector<float>      mColorss;
         QVector<GLfloat>   mVertices;
         QVector<GLfloat>   mColors;
 
@@ -34,6 +47,8 @@ namespace symmetricDDAandSutherlandCohen
         OpenGLWindow*   mRenderer;
         QPushButton*    mPushButton;
         QPushButton*    mPushButton2;
+        QPushButton*    mPushButton3;
+        QPushButton*    mPushButton4;
 
         QLineEdit* mLineEdit;
         QLineEdit* mLineEdit2;
@@ -47,6 +62,20 @@ namespace symmetricDDAandSutherlandCohen
         QLineEdit* mLineEdit10;
         QLineEdit* mLineEdit11;
         QLineEdit* mLineEdit12;
+
+        QLineEdit* mLineEdit13;
+        QLineEdit* mLineEdit14;
+        QLineEdit* mLineEdit15;
+        QLineEdit* mLineEdit16;
+        QLineEdit* mLineEdit17;
+        QLineEdit* mLineEdit18;
+        QLineEdit* mLineEdit19;
+        QLineEdit* mLineEdit20;
+        QLineEdit* mLineEdit21;
+        QLineEdit* mLineEdit22;
+        QLineEdit* mLineEdit23;
+        QLineEdit* mLineEdit24;
+        
 
         QLabel* mLabel;
         QLabel* mLabel2;
@@ -63,19 +92,38 @@ namespace symmetricDDAandSutherlandCohen
         QLabel* mLabel13;
         QLabel* mLabel14;
 
+        QLabel* mLabel15;
+        QLabel* mLabel16;
+        QLabel* mLabel17;
+        QLabel* mLabel18;
+        QLabel* mLabel19;
+        QLabel* mLabel20;
+        QLabel* mLabel21;
+        QLabel* mLabel22;
+        QLabel* mLabel23;
+        QLabel* mLabel24;
+        QLabel* mLabel25;
+        QLabel* mLabel26;
+
         float xCoordinate;
         float yCoordinate;
+        float zCoordinate;
         float x1Coordinate;
         float y1Coordinate;
+        float z1Coordinate;
+        float x2Coordinate;
+        float y2Coordinate;
+        float z2Coordinate;
+        float x3Coordinate;
+        float y3Coordinate;
+        float z3Coordinate;
+
         float xMin;
         float yMin;
         float xMax;
         float yMax;
 
         SymmetricDDA symmetricDDAObj;
+    
+};
 
-    public slots:
-        void clipLine();
-        void drawLine();
-    };
-}

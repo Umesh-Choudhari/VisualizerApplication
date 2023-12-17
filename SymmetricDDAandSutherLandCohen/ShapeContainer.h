@@ -1,26 +1,24 @@
 #pragma once
-#include "Rectangle.h"
+#include "Rectanglee.h"
 
-namespace symmetricDDAandSutherlandCohen
+
+class ShapeContainer
 {
-	class ShapeContainer
-	{
-	public:
-		ShapeContainer();
-		~ShapeContainer();
+public:
+	ShapeContainer();
+	~ShapeContainer();
+public:
+	std::vector<Line>& inLines();
+	std::vector<Line>& clipedLines();
 
-	public:
-		std::vector<Line>& inLines();
-		std::vector<Line>& clipedLines();
+private :
+	std::vector<Line> inputLines;
+	std::vector<Line> mClipedLines;
+	QVector<GLfloat>  mVertices;
 
-	private :
-		std::vector<Line> inputLines;
-		std::vector<Line> mClipedLines;
-		QVector<GLfloat>  mVertices;
+	Rectanglee mWindow;
 
-		symmetricDDAandSutherlandCohen::Rectangle mWindow;
+};
 
-	};
-}
 
 

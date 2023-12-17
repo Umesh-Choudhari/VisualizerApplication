@@ -8,8 +8,7 @@ class QOpenGLShader;
 class QOpenGLShaderProgram;
 class QOpenGLPaintDevice;
 
-namespace symmetricDDAandSutherlandCohen
-{
+
     class OpenGLWindow :public QOpenGLWidget, protected QOpenGLFunctions
     {
         Q_OBJECT
@@ -19,8 +18,8 @@ namespace symmetricDDAandSutherlandCohen
 
         void setVectorOfLines(QVector<GLfloat>& vectorOfLines);
         void setColorOfLines(QVector<GLfloat>& colorOfLines);
-        void updateData(const QVector<GLfloat>& vertices, const QVector<GLfloat>& colors);
-        void fillSquare(const QVector<QVector2D>& squareVertices, const QVector3D& fillColor);
+        void updateData(const QVector<GLfloat>& vertices, const QVector<GLfloat>& colors, int flag=0);
+        //void fillSquare(const QVector<QVector2D>& squareVertices, const QVector3D& fillColor);
 
     protected:
         void paintGL() override;
@@ -31,6 +30,7 @@ namespace symmetricDDAandSutherlandCohen
 
     private:
         bool mAnimating = false;
+        int mFlag;
         QOpenGLContext* mContext = nullptr;
         QOpenGLPaintDevice* mDevice = nullptr;
 
@@ -57,6 +57,6 @@ namespace symmetricDDAandSutherlandCohen
         GLint m_colAttr1 = 0;
         GLint m_matrixUniform = 0;
     };
-}
+
 
 
