@@ -8,7 +8,7 @@ This project is a graphical application developed in C++ using the Qt framework 
  
    - `Line.h` and `Line.cpp`: Definitions and implementations for lines.
  
-   - `Rectanglee.h` and `Rectanglee.cpp`: Definitions and implementations for generic shapes.
+   - `Rectanglee.h` and `Rectanglee.cpp`: Definitions and implementations for Rectangle.
  
    - **Exported as DLL:** The Geometry Library is exported as a Dynamic Link Library (DLL), promoting reusability in other projects.
  
