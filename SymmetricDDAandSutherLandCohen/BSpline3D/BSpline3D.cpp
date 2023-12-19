@@ -5,8 +5,6 @@
 
 using namespace std;
 
-
-
 BSpline3D::BSpline3D(Point3D inP0, Point3D inP1, Point3D inP2, Point3D inP3) :
     degree(3),
     mP0(inP0),
